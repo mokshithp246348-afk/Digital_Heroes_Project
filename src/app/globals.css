@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@layer base {
+  :root, html.dark {
+    --bg-primary: #05070A;
+    --bg-secondary: #0A0E17;
+    --bg-card: rgba(15, 20, 30, 0.85);
+    --border-subtle: rgba(212, 175, 55, 0.22);
+    --accent-gold: #D4AF37;
+    --accent-gold-light: #F3E5AB;
+    --accent-gold-dark: #A38025;
+    --text-primary: #F8FAFC;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html.light {
+    --bg-primary: #F8FAFC;
+    --bg-secondary: #FFFFFF;
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --border-subtle: rgba(197, 160, 89, 0.35);
+    --accent-gold: #C5A059;
+    --accent-gold-light: #8C6D28;
+    --accent-gold-dark: #664E19;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  h1, h2, h3, .font-luxury-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Premium Obsidian & Gold Golf Atmosphere */
+.bg-golf-atmosphere {
+  background: 
+    radial-gradient(circle at 20% 15%, rgba(212, 175, 55, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 80% 30%, rgba(245, 230, 171, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(197, 160, 89, 0.06) 0%, transparent 50%),
+    #05070A;
+}
+
+/* Glassmorphism Luxury Panel with Champagne Gold Border */
+.glass-panel {
+  background: rgba(12, 16, 26, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.65), 0 0 20px 0 rgba(212, 175, 55, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 24, 38, 0.9);
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 30px 0 rgba(212, 175, 55, 0.12);
+  transform: translateY(-3px);
+}
+
+/* Champagne Gold Metallic Gradients (Zero Green / Zero Orange) */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5E6AB 40%, #D4AF37 75%, #A38025 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-champagne {
+  background: linear-gradient(135deg, #FFFFFF 20%, #F3E5AB 60%, #C5A059 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-gold-primary {
+  background: linear-gradient(135deg, #D4AF37 0%, #F5E6AB 50%, #C5A059 100%);
+  color: #05070A;
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold-primary:hover {
+  background: linear-gradient(135deg, #F5E6AB 0%, #D4AF37 60%, #B89028 100%);
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.4);
+  transform: translateY(-1.5px);
+}
+
+/* 3D Metallic Lottery Balls */
+.ball-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  font-weight: 800;
+  font-size: 1.125rem;
+  color: #F8FAFC;
+  background: radial-gradient(circle at 35% 35%, #242C3E, #0D111A);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2), 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.ball-winning {
+  background: radial-gradient(circle at 35% 35%, #F5E6AB, #D4AF37, #9A7B38);
+  border-color: #FFF3C4;
+  box-shadow: 0 0 24px rgba(212, 175, 55, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.6);
+  color: #05070A;
+}
+
+.ball-matched {
+  background: radial-gradient(circle at 35% 35%, #E5C158, #9A7B38);
+  border-color: #F5E6AB;
+  box-shadow: 0 0 20px rgba(229, 193, 88, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  color: #05070A;
+}
+
+/* Gold Pulse Glow */
+@keyframes goldPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(212, 175, 55, 0.45);
+  }
+}
+
+.pulse-glow-gold {
+  animation: goldPulseGlow 3s infinite ease-in-out;
+}
+
+/* Light Theme Overrides */
+html.light body {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+html.light header {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+  border-bottom-color: rgba(197, 160, 89, 0.25) !important;
+}
+
+html.light header span, html.light header a {
+  color: #0F172A;
+}
+
+html.light .glass-panel {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(197, 160, 89, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+  color: #0F172A !important;
+}
+
+html.light .text-gradient-gold,
+html.light .text-gradient-champagne {
+  background: linear-gradient(135deg, #0F172A 0%, #8C6D28 60%, #664E19 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
